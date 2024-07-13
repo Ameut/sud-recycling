@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    color: white;
+    padding: 1em 0;
+}
+
+.banner {
+    background: url("{% static 'recycling/images/banniere.jpg' %}") no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 5em 0;
+    color: white;
+}
+
+nav {
+    background-color: #080707;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #090808;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content img {
+    max-width: 40%;
+    height: auto;
+    margin-left: 1em;
+}
+
+.content .text {
+    max-width: 60%;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.content .text p {
+    margin-bottom: 1em;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+footer .social-media a {
+    color: white;
+    margin: 0 0.5em;
+    text-decoration: none;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}

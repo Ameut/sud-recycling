@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demande de Devis</title>
+    <link rel="stylesheet" href="{% static 'recycling/css/styles.css' %}" />
+
+    <style>
+      /* Code CSS pour la bannière */
+      .banner {
+        background: url("{% static 'recycling/images/banniere.jpg' %}")
+          no-repeat center center;
+        background-size: cover;
+        text-align: center;
+        padding: 5em 0;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="recycling/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="banner">
+        <h1>Demande de Devis</h1>
+      </div>
+    </header>
+    <main>
+      <div id="message"></div>
+      <section class="content">
+        <form id="demande-devis-form">
+          {% csrf_token %} {{ form.as_p }}
+          <button type="submit">Soumettre</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Sud Recycling.</p>
+      <div class="social-media">
+        <a href="#">Facebook</a> | <a href="#">X</a> | <a href="#">Instagram</a>
+      </div>
+    </footer>
+    <script src="{% static 'recycling/js/demande_devis.js' %}"></script>
+  </body>
+</html>

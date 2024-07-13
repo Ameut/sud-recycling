@@ -1,0 +1,192 @@
+/* Styles pour le corps de la page */
+
+
+ /* Code CSS pour la bannière */
+ .banner {
+    background: url("{% static 'recycling/images/banniere.jpg' %}")
+      no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 5em 0;
+    color: white;
+  }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles pour l'en-tête */
+header {
+    color: white;
+    padding: 1em 0;
+}
+
+/* Styles pour la bannière */
+.banner {
+    background: url("{% static 'recycling/images/banniere.jpg' %}") no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 5em 0;
+    color: white;
+}
+
+/* Styles pour le menu de navigation */
+nav {
+    background-color: #080707;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #090808;
+}
+
+/* Styles pour le contenu principal */
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+/* Styles pour les sections de contenu */
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content img {
+    max-width: 50%;
+    height: auto;
+    margin-left: 1em;
+}
+
+.content .text {
+    max-width: 60%;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.content .text p {
+    margin-bottom: 1em;
+}
+
+/* Styles pour le pied de page */
+footer {
+    background-color: #030303;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+footer .social-media a {
+    color: white;
+    margin: 0 0.5em;
+    text-decoration: none;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}
+  .content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* bouton */
+button[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* formulaire devis  */
+
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button styling */
+  button[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #218838;
+  }
+
+  .banner {
+    background: url("{% static 'recycling/images/banniere.jpg' %}") no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 5em 0;
+    color: white;
+    position: relative;
+  }
+  
+  .banner-buttons {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .btn-devis {
+    background-color: green;
+    color: white;
+  }
+  

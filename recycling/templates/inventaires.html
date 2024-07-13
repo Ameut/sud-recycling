@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventaires</title>
+    <link rel="stylesheet" href="{% static 'recycling/css/styles.css' %}" />
+    <style>
+      .banner {
+        background: url("{% static 'recycling/images/banniere.jpg' %}")
+          no-repeat center center;
+        background-size: cover;
+        text-align: center;
+        padding: 5em 0;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="banner">
+        <h1>Inventaires</h1>
+      </div>
+    </header>
+    <main>
+      <section class="content">
+        <div class="text">
+          <h2>Enregistrer Volume</h2>
+          <form method="post">
+            {% csrf_token %} {{ form.as_p }}
+            <button type="submit" name="volume_submit">
+              Enregistrer Volume
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="text">
+          <h2>Résultats des inventaires (Volumes)</h2>
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Matière</th>
+                <th>Volume (m³)</th>
+                <th>Coefficient</th>
+                <th>Résultat</th>
+                <th>Date d'enregistrement</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for result in resultats %}
+              <tr>
+                <td>{{ result.matiere }}</td>
+                <td>{{ result.volume }}</td>
+                <td>{{ result.coef }}</td>
+                <td>{{ result.resultat }}</td>
+                <td>{{ result.date }}</td>
+                <td>
+                  <form
+                    method="post"
+                    action="{% url 'supprimer_inventaire' result.id %}"
+                  >
+                    {% csrf_token %}
+                    <button type="submit">Supprimer</button>
+                  </form>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="text">
+          <h2>Enregistrer Balle</h2>
+          <form method="post">
+            {% csrf_token %} {{ balle_form.as_p }}
+            <button type="submit" name="balle_submit">Enregistrer Balle</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="text">
+          <h2>Liste des Balles</h2>
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Balles</th>
+                <th>Nombre de Balles</th>
+                <th>Date d'enregistrement</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for balle in balles %}
+              <tr>
+                <td>{{ balle.nom }}</td>
+                <td>{{ balle.nombre }}</td>
+                <td>{{ balle.date_enregistrement }}</td>
+                <td>
+                  <form
+                    method="post"
+                    action="{% url 'supprimer_balle' balle.id %}"
+                  >
+                    {% csrf_token %}
+                    <button type="submit">Supprimer</button>
+                  </form>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="text">
+          <form method="get" action="{% url 'telecharger_inventaires_pdf' %}">
+            <button type="submit">Télécharger l'inventaire en PDF</button>
+          </form>
+          <form method="get" action="{% url 'telecharger_inventaires' %}">
+            <button type="submit">Télécharger les inventaires excel</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Sud Recycling.</p>
+      <div class="social-media">
+        <a href="#">Facebook</a> | <a href="#">X</a> |
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+  </body>
+</html>
